@@ -203,10 +203,11 @@ let sampleString = "Hi, my name is Kylo."
 */
 
 //CODE HERE
-// function something(upperCase){
-//  upperCase = sampleString.toUpperCase()
-// }
-// something()
+function upperCase(string){
+  console.log(string.toUpperCase())
+}
+upperCase(sampleString)
+
 ////////////////// PROBLEM 12 ////////////////////
 /*
   Write a function called emailCheck that takes in
@@ -218,14 +219,34 @@ let sampleString = "Hi, my name is Kylo."
   return 'must provide a valid email address'
 */
 
+//CODE HERE
+function emailCheck(email) {
+  email = String(email).trim()
+
+  if(email.includes('@')) {
+    console.log()
+    return 'email verified'
+  } else {
+    return 'must provide a valid email address'
+  }
+}
+
+let atCheck = emailCheck('adam.hunter@gmail.com')
+console.log(atCheck)
+
+
 ////////////////// PROBLEM 13 ////////////////////
 /*
   Write a function, naming it whatever you believe to be appropriate, that buys as many chocolate frogs as possible with a certain amount of gold. Each chocolate frog costs 3 gold. Your function should take in a single parameter, which is the amount of gold you are willing to spend. Your function should return a total amount of chocolate frogs you were able to purchase.
   Create a variable called `totalFrogs` and set it equal to your function invoked, passing in the amount of gold you are willing to spend.
 */
-
+// 1 frog = 3 gold
 //CODE HERE
-
+function merchant(gold) {
+  return gold / 3
+}
+let totalFrogs = merchant(50)
+console.log(totalFrogs)
 
 ////////////////// PROBLEM 14 ////////////////////
 /*
@@ -233,7 +254,17 @@ let sampleString = "Hi, my name is Kylo."
 */
 
 //CODE HERE
-
+function merchant2(gold) {
+  if (gold % 3 === 0) {
+    return gold / 3
+  } else if((gold - 1) % 3 === 0) {
+    return (gold - 1) / 3
+  } else if((gold - 2) % 3 === 0) {
+    return (gold - 2) / 3
+  }
+}
+let totalFrogs2 = merchant2(50)
+console.log(totalFrogs2)
 
 ////////////////// PROBLEM 15 ////////////////////
 let sampleArray = [0,1,2,3,4,7,5,6,8,9]
@@ -242,7 +273,15 @@ let sampleArray = [0,1,2,3,4,7,5,6,8,9]
 */
 
 //CODE HERE
+// function isArrayAscending(sampleArray) {
+//   return sampleArray.every(function (x, i) {
+//     return i === 0 || x < sampleArray[i - 1];
+//   });
+// }
 
+
+// let arrayIsAscending = isArrayAscending(sampleArray)
+// console.log(arrayIsAscending)
 
 ////////////////// PROBLEM 16 ////////////////////
 
@@ -266,13 +305,13 @@ function pond() {
 */
 
 //This array should contain the variable names (as strings) accessible in the global scope.
-let globalScope = []
+let globalScope = ['duck']
 
 //This array should contain the variable names (as strings) accessible in the bathroom function.
-let bathroomScope = []
+let bathroomScope = ['duck', 'rubberDuck']
 
 //This array should contain the variable names (as strings) accessible in the bathtub function.
-let bathtubScope = []
+let bathtubScope = ['duck', 'rubberDuck', 'sailortub']
 
 //This array should contain the variable names (as strings) accessible in the pond function.
-let pondScope = []
+let pondScope = ['duck', 'realDuck']
